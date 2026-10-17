@@ -1,0 +1,4 @@
+# The main ruleset requires code owner review, and only the prod overlay has an
+# owner. Everything else merges on green checks; a prod promotion also needs
+# an approval. Promotion PRs come from the GitHub App, so the owner can approve.
+/gitops/workloads/crapi/overlays/prod/ @AFP9272000

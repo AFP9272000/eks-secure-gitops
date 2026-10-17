@@ -1,0 +1,6 @@
+# Copy to infra/backend.hcl (git-ignored), or let the runbook write it:
+#   terraform -chdir=infra/bootstrap output -raw backend_hcl | Set-Content -Encoding ascii infra/backend.hcl
+# Each stack sets its own state key in backend.tf.
+bucket     = "eks-secure-gitops-tfstate-<account-id>"
+region     = "us-east-1"
+kms_key_id = "arn:aws:kms:us-east-1:<account-id>:key/<key-id>"

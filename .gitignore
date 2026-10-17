@@ -1,0 +1,34 @@
+# Terraform working files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+plan.txt
+plan.log
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+
+# Override files hold local-only changes, such as the first bootstrap run on
+# local state.
+*_override.tf
+*_override.tf.json
+
+# Variable and backend files stay local; the committed settings file holds
+# only non-secret values.
+*.tfvars
+*.tfvars.json
+!infra/foundation/settings.auto.tfvars
+infra/backend.hcl
+
+# Credentials that must never be committed
+*.pem
+ping-devops.json
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

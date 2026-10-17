@@ -1,0 +1,26 @@
+version: 2
+
+updates:
+  # Keeps the commit SHA pins on every action current. The version comment
+  # beside each pin moves with it.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: terraform
+    directories:
+      - /infra/bootstrap
+      - /infra/foundation
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      terraform:
+        patterns: ["*"]
